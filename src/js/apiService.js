@@ -3,7 +3,7 @@ const baseUrl = 'https://pixabay.com/api/';
 export default {
   page: 1,
   query: '',
-  async fetcArticles(query) {
+  async fethcArticles(query) {
     const keyApi = '20305682-bc6c61caedc31d9f439895335';
     const requestParams = `?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=12&key=${keyApi}`;
     const res = await fetch(baseUrl + requestParams);

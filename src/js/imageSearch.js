@@ -16,7 +16,7 @@ function imageSearchInputHandler(e) {
   servise.resetPage();
   servise.searchQuerry = input.value;
 
-  servise.fetcArticles().then((hits) => {
+  servise.fethcArticles().then((hits) => {
     const markup = buildListItemsTemplate(hits);
     iserListItems(markup);
   });
@@ -24,7 +24,7 @@ function imageSearchInputHandler(e) {
 }
 
 function loadMoreBtnHandler() {
-  servise.fetcArticles().then((hits) => {
+  servise.fethcArticles().then((hits) => {
     const markup = buildListItemsTemplate(hits);
     iserListItems(markup);
     window.scrollTo(0, 1000);
