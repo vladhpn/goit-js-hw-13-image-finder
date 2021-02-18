@@ -13,8 +13,10 @@ function imageSearchInputHandler(e) {
 
   clearListItems();
 
-  servise.resetPage();
   servise.searchQuerry = input.value;
+
+  servise.resetPage();
+  refs.loadMoreBtn.classList.add('is-hidden');
 
   servise.fethcArticles().then((hits) => {
     const markup = buildListItemsTemplate(hits);
@@ -37,6 +39,7 @@ function loadMoreBtnHandler() {
 }
 function iserListItems(items) {
   refs.gallery.insertAdjacentHTML('beforeend', items);
+  refs.loadMoreBtn.classList.remove('is-hidden');
 }
 function buildListItemsTemplate(items) {
   return cardImeges(items);
