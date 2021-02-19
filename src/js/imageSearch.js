@@ -29,10 +29,9 @@ function loadMoreBtnHandler() {
   servise.fethcArticles().then((hits) => {
     const markup = buildListItemsTemplate(hits);
     iserListItems(markup);
-    window.scrollTo(0, 1000);
 
     window.scrollTo({
-      top: 1000,
+      top: refs.gallery.scrollHeight,
       behavior: 'smooth',
     });
   });
